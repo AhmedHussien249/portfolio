@@ -79,7 +79,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="/Ahmed_Hussein_CV.pdf"
+                href="/portfolio/Ahmed_Hussein_CV.pdf"
                 download="Ahmed_Hussien_CV.pdf"
                 className="flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-950/60 border border-slate-900 hover:border-slate-800 hover:bg-slate-900/40 text-flutter-cyan font-semibold transition-all duration-300 cursor-pointer"
               >

@@ -58,7 +58,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="/Ahmed_Hussein_CV.pdf"
+              href="/portfolio/Ahmed_Hussein_CV.pdf"
               download="Ahmed_Hussien_CV.pdf"
               className="px-4 py-2 rounded-lg bg-flutter/10 border border-flutter/30 hover:border-flutter/60 text-flutter-cyan text-sm font-bold transition-all duration-300"
             >
@@ -101,7 +101,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <a
-                  href="/Ahmed_Hussein_CV.pdf"
+                  href="/portfolio/Ahmed_Hussein_CV.pdf"
                   download="Ahmed_Hussien_CV.pdf"
                   onClick={() => setIsOpen(false)}
                   className="inline-block text-center w-full px-4 py-2.5 rounded-lg bg-flutter hover:bg-flutter-dark text-white text-sm font-bold transition-all"

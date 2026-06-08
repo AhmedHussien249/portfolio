@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -8,8 +9,7 @@ export default function Home() {
       <main className="flex-grow pt-16">
         <Hero />
         
-        {/* Placeholder for Experience Section */}
-        <div id="experience" className="py-1" />
+        <Experience />
 
         {/* Placeholder for Projects Section */}
         <div id="projects" className="py-1" />

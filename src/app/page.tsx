@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -11,8 +12,7 @@ export default function Home() {
         
         <Experience />
 
-        {/* Placeholder for Projects Section */}
-        <div id="projects" className="py-1" />
+        <Projects />
 
         {/* Placeholder for Skills Section */}
         <div id="skills" className="py-1" />

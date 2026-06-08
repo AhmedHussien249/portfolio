@@ -1,0 +1,204 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { ExternalLink, Cpu, Route, Sparkles, ShoppingCart } from 'lucide-react';
+import ShimmerImage from './ShimmerImage';
+
+const projects = [
+  {
+    title: 'Super Fitness & AI Coach App',
+    description: 'A revolutionary wellness application powered by a smart personal trainer. It enables users to stream real-time workout recommendations and track nutrition logs offline.',
+    tech: ['Flutter', 'Gemini AI', 'BLoC', 'Hive CE', 'Dart'],
+    highlight: 'Agentic AI Smart Coach, Gemini API streaming, RAG context, and offline Hive caching.',
+    image: '/images/project_fitness.png',
+    github: 'https://github.com/AhmedHussien249',
+    icon: Sparkles,
+    glow: 'rgba(6, 182, 212, 0.15)',
+  },
+  {
+    title: 'Flowery (E-Commerce App)',
+    description: 'A premium flower delivery e-commerce application offering an immersive shopping catalog, instant cart state syncing, and detailed order maps.',
+    tech: ['Flutter', 'BLoC', 'Clean Architecture', 'Mapbox SDK', 'Firestore'],
+    highlight: 'Global cart state, Mapbox SDK, live Firestore streams, and smooth 60 FPS rendering.',
+    image: '/images/project_flowery.png',
+    github: 'https://github.com/AhmedHussien249',
+    icon: ShoppingCart,
+    glow: 'rgba(217, 70, 239, 0.15)',
+  },
+  {
+    title: 'Flowery (Driver App)',
+    description: 'A high-performance logistics companion app designed for delivery drivers, providing coordinate synchronization and route directions.',
+    tech: ['Flutter', 'BLoC', 'Mapbox SDK', 'Firebase', 'Dio'],
+    highlight: 'Persistent foreground service for live coordinate syncing, route caching, and Dio interceptors.',
+    image: '/images/project_driver.png',
+    github: 'https://github.com/AhmedHussien249',
+    icon: Route,
+    glow: 'rgba(16, 185, 129, 0.15)',
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 45 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring' as const,
+      stiffness: 80,
+      damping: 15,
+    },
+  },
+};
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-24 relative overflow-hidden bg-slate-950">
+      {/* Background ambient light */}
+      <div className="absolute top-1/4 left-1/10 w-[500px] h-[500px] rounded-full bg-flutter-cyan/5 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/10 w-[400px] h-[400px] rounded-full bg-flutter/5 blur-[120px] pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl sm:text-4xl font-extrabold tracking-tight"
+          >
+            Featured <span className="text-gradient-flutter">Projects</span>
+          </motion.h2>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="h-1 w-20 bg-flutter mx-auto mt-4 rounded-full"
+          />
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-slate-400 mt-4 text-base sm:text-lg"
+          >
+            Explore production-ready mobile applications built with clean principles and cutting-edge tech.
+          </motion.p>
+        </div>
+
+        {/* Projects Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+        >
+          {projects.map((proj, idx) => {
+            const Icon = proj.icon;
+            return (
+              <motion.div
+                key={idx}
+                variants={cardVariants}
+                className="glass-card rounded-2xl border border-slate-900 overflow-hidden flex flex-col h-full group hover:border-flutter/25 transition-all duration-300 relative"
+                style={{
+                  boxShadow: `0 10px 30px -15px ${proj.glow}`,
+                }}
+              >
+                {/* Decorative Tech Icon in corner */}
+                <div className="absolute top-4 right-4 z-20 w-8 h-8 rounded-lg bg-slate-950/80 border border-slate-800/80 flex items-center justify-center text-slate-400">
+                  <Icon className="w-4 h-4 text-flutter-cyan" />
+                </div>
+
+                {/* Project Image Box */}
+                <div className="relative aspect-video overflow-hidden">
+                  <ShimmerImage
+                    src={proj.image}
+                    alt={proj.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-103 transition-transform duration-700"
+                    containerClassName="w-full h-full rounded-none border-none border-b border-slate-900"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6 flex flex-col flex-grow space-y-4">
+                  {/* Title & Description */}
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-white group-hover:text-flutter-cyan transition-colors">
+                      {proj.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed font-sans min-h-[72px]">
+                      {proj.description}
+                    </p>
+                  </div>
+
+                  {/* Highlights Bullet */}
+                  <div className="p-3.5 rounded-xl bg-slate-950/50 border border-slate-900/80 flex items-start gap-2.5">
+                    <Cpu className="w-4 h-4 text-flutter-cyan shrink-0 mt-0.5" />
+                    <div className="space-y-0.5">
+                      <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold block">Key Architectural Highlight</span>
+                      <span className="text-xs text-slate-300 leading-normal font-sans block">{proj.highlight}</span>
+                    </div>
+                  </div>
+
+                  {/* Tech Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {proj.tech.map((t, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-2.5 py-0.5 rounded-full bg-slate-950 border border-slate-900 text-[11px] text-slate-300 font-semibold"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Card Actions Footer */}
+                  <div className="flex items-center justify-between border-t border-slate-900/60 pt-4 mt-auto">
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white transition-colors"
+                    >
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                      </svg>
+                      <span>Repository</span>
+                    </a>
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-flutter-cyan hover:text-white transition-colors"
+                    >
+                      <span>Preview</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+      </div>
+    </section>
+  );
+}

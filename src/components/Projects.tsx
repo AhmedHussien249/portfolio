@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Cpu, Route, Sparkles, ShoppingCart, CheckCircle, RefreshCw, GitBranch, ShieldCheck } from 'lucide-react';
-import ShimmerImage from './ShimmerImage';
 
 const projects = [
   {
@@ -11,7 +10,7 @@ const projects = [
     description: 'A revolutionary wellness application powered by a smart personal trainer. It enables users to stream real-time workout recommendations and track nutrition logs offline.',
     tech: ['Flutter', 'Gemini AI', 'BLoC', 'Hive CE', 'Dart'],
     highlight: 'Agentic AI Smart Coach, Gemini API streaming, RAG context, and offline Hive caching.',
-    image: '/images/project_fitness.png',
+    video: '/images/project_fitness.mp4',
     github: 'https://github.com/Flutter-Elevate-Team2/Fitness',
     preview: 'https://github.com/Flutter-Elevate-Team2/Fitness',
     icon: Sparkles,
@@ -23,7 +22,7 @@ const projects = [
     description: 'A premium flower delivery e-commerce application offering an immersive shopping catalog, instant cart state syncing, and detailed order maps.',
     tech: ['Flutter', 'BLoC', 'Clean Architecture', 'Mapbox SDK', 'Firestore'],
     highlight: 'Global cart state, Mapbox SDK, live Firestore streams, and smooth 60 FPS rendering.',
-    image: '/images/project_flowery.png',
+    video: '/images/project_flowery.mp4',
     github: 'https://github.com/Flutter-Elevate-Team2/Flowers-App',
     preview: 'https://github.com/Flutter-Elevate-Team2/Flowers-App',
     icon: ShoppingCart,
@@ -35,7 +34,7 @@ const projects = [
     description: 'A high-performance logistics companion app designed for delivery drivers, providing coordinate synchronization and route directions.',
     tech: ['Flutter', 'BLoC', 'Mapbox SDK', 'Firebase', 'Dio'],
     highlight: 'Persistent foreground service for live coordinate syncing, route caching, and Dio interceptors.',
-    image: '/images/project_driver.png',
+    video: '/images/project_driver.mp4',
     github: 'https://github.com/Flutter-Elevate-Team2/Tracking-App',
     preview: 'https://github.com/Flutter-Elevate-Team2/Tracking-App',
     icon: Route,
@@ -130,17 +129,17 @@ export default function Projects() {
                   boxShadow: isHovered ? `0 20px 40px -15px ${proj.glow}` : 'none',
                 }}
               >
-                {/* Visual Image Background (CLS protected & borderless blend) */}
+                {/* Visual Video Background (CLS protected & borderless blend) */}
                 <div className="absolute inset-0 z-0">
-                  <ShimmerImage
-                    src={proj.image}
-                    alt={proj.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover opacity-35 group-hover:scale-102 transition-transform duration-700 pointer-events-none"
-                    containerClassName="w-full h-full rounded-none border-none cls-skeleton-image"
+                  <video
+                    src={proj.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="object-cover w-full h-full opacity-35 group-hover:scale-103 transition-transform duration-700 pointer-events-none"
                   />
-                  {/* Grid mask blending the image borderless */}
+                  {/* Grid mask blending the video borderless */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b10] via-[#0a0b10]/80 to-[#0a0b10]/20 pointer-events-none" />
                 </div>
 

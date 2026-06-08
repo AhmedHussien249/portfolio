@@ -12,6 +12,7 @@ const projects = [
     highlight: 'Agentic AI Smart Coach, Gemini API streaming, RAG context, and offline Hive caching.',
     image: '/images/project_fitness.png',
     github: 'https://github.com/Flutter-Elevate-Team2/Fitness',
+    preview: 'https://github.com/Flutter-Elevate-Team2/Fitness',
     icon: Sparkles,
     glow: 'rgba(6, 182, 212, 0.15)',
   },
@@ -22,6 +23,7 @@ const projects = [
     highlight: 'Global cart state, Mapbox SDK, live Firestore streams, and smooth 60 FPS rendering.',
     image: '/images/project_flowery.png',
     github: 'https://github.com/Flutter-Elevate-Team2/Flowers-App',
+    preview: 'https://github.com/Flutter-Elevate-Team2/Flowers-App',
     icon: ShoppingCart,
     glow: 'rgba(217, 70, 239, 0.15)',
   },
@@ -32,6 +34,7 @@ const projects = [
     highlight: 'Persistent foreground service for live coordinate syncing, route caching, and Dio interceptors.',
     image: '/images/project_driver.png',
     github: 'https://github.com/Flutter-Elevate-Team2/Tracking-App',
+    preview: 'https://github.com/Flutter-Elevate-Team2/Tracking-App',
     icon: Route,
     glow: 'rgba(16, 185, 129, 0.15)',
   },
@@ -182,7 +185,7 @@ export default function Projects() {
                       <span>Repository</span>
                     </a>
                     <a
-                      href={proj.github}
+                      href={proj.preview}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs font-bold text-flutter-cyan hover:text-white transition-colors"

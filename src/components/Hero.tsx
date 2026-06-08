@@ -109,7 +109,7 @@ export default function Hero() {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/ahmed-hussien-02b499186"
+                href="https://www.linkedin.com/in/ahmed-hussien-02b499186/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#38bdf8] transition-colors"

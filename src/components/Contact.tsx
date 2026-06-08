@@ -176,7 +176,7 @@ export default function Contact() {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/ahmed-hussien-02b499186"
+              href="https://www.linkedin.com/in/ahmed-hussien-02b499186/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 hover:text-white transition-colors"

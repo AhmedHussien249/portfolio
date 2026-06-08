@@ -6,42 +6,43 @@ import ShimmerImage from './ShimmerImage';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center py-20 overflow-hidden">
-      {/* Background Ambient Glows */}
-      <div className="absolute top-1/4 left-1/10 w-[350px] h-[350px] rounded-full bg-flutter/15 blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/10 w-[350px] h-[350px] rounded-full bg-flutter-cyan/15 blur-[80px] pointer-events-none" />
+    <section className="relative min-h-[95vh] flex items-center justify-center py-24 overflow-hidden bg-[#050508]">
+      {/* Moving Ambient Mesh Blobs */}
+      <div className="absolute top-1/5 left-1/5 w-[380px] h-[380px] rounded-full bg-flutter/12 blur-[100px] animate-blob pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/5 w-[320px] h-[320px] rounded-full bg-flutter-cyan/10 blur-[90px] animate-blob [animation-delay:4s] pointer-events-none" />
       
-      {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35 pointer-events-none" />
+      {/* Cyber Grid Background */}
+      <div className="cyber-grid" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Content */}
+          {/* Left Column: Colossal Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
             
             {/* Tag Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-flutter/10 border border-flutter/20 text-flutter-cyan text-sm font-semibold tracking-wide"
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-800/80 text-flutter-cyan text-xs font-bold uppercase tracking-wider backdrop-blur-sm"
             >
-              <Briefcase className="w-4 h-4 text-flutter-cyan" />
+              <Briefcase className="w-3.5 h-3.5 text-flutter-cyan animate-pulse" />
               <span>Available for Roles & Internships</span>
             </motion.div>
 
-            {/* Headline */}
+            {/* Colossal Headline with Asymmetrical Line Breaks */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight leading-none"
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              className="text-5xl sm:text-7xl xl:text-8xl font-black tracking-tighter leading-[0.9] text-left"
             >
-              <span className="text-gradient">I'm </span>
-              <span className="text-gradient-flutter font-black">Ahmed Hussien</span>
+              <span className="text-gradient">I AM </span>
+              <br className="hidden sm:inline" />
+              <span className="text-gradient-flutter font-black">AHMED HUSSIEN</span>
               <br />
-              <span className="text-2xl sm:text-3xl xl:text-4xl text-slate-300 font-semibold block mt-4">
+              <span className="text-xl sm:text-2xl xl:text-3xl text-slate-400 font-semibold tracking-normal block mt-4 font-sans uppercase">
                 Junior Flutter Developer & Mobile Engineer
               </span>
             </motion.h1>
@@ -50,22 +51,22 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed font-sans"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed font-sans text-left"
             >
               Self-driven Flutter Developer with 2+ years of experience building production-ready, cross-platform mobile applications. Specialized in creating high-performance, responsive UIs with BLoC, Clean Architecture, Mapbox integration, and Gemini AI.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Liquid Fill CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pt-4"
             >
               <a
                 href="#projects"
-                className="group relative flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-flutter hover:bg-flutter-dark text-white font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(2,86,155,0.3)] hover:shadow-[0_4px_25px_rgba(2,86,155,0.5)] cursor-pointer"
+                className="liquid-btn group flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-900 border border-flutter/40 text-white font-bold transition-all duration-300 shadow-[0_4px_20px_rgba(2,86,155,0.15)] hover:shadow-[0_4px_25px_rgba(2,86,155,0.35)] cursor-pointer"
               >
                 <span>View Work</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -73,7 +74,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-flutter/50 hover:bg-slate-800/50 text-slate-200 font-semibold transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-950/60 border border-slate-900 hover:border-slate-800 hover:bg-slate-900/40 text-slate-300 hover:text-white font-semibold transition-all duration-300 cursor-pointer"
               >
                 <Mail className="w-4 h-4 text-flutter-cyan" />
                 <span>Contact Me</span>
@@ -82,7 +83,7 @@ export default function Hero() {
               <a
                 href="/Ahmed_Hussein_CV.pdf"
                 download="Ahmed_Hussien_CV.pdf"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-flutter-cyan/50 hover:bg-slate-800/30 text-flutter-cyan font-semibold transition-all duration-300 cursor-pointer"
+                className="flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-slate-950/60 border border-slate-900 hover:border-slate-800 hover:bg-slate-900/40 text-flutter-cyan font-semibold transition-all duration-300 cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>Download CV</span>
@@ -94,14 +95,14 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex items-center gap-5 pt-6 text-slate-500"
+              className="flex items-center gap-5 pt-6 text-slate-600"
             >
-              <span className="text-xs uppercase tracking-wider font-semibold text-slate-600">Connect:</span>
+              <span className="text-xs uppercase tracking-widest font-extrabold text-slate-500">Connect:</span>
               <a
                 href="https://github.com/AhmedHussien249"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#38bdf8] transition-colors"
+                className="hover:text-white transition-colors"
                 aria-label="GitHub Profile"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +113,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/ahmed-hussien-02b499186/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#38bdf8] transition-colors"
+                className="hover:text-white transition-colors"
                 aria-label="LinkedIn Profile"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -122,61 +123,48 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Premium Photo Box */}
+          {/* Right Column: Bento Photo Box (CLS protected) */}
           <div className="lg:col-span-5 flex justify-center items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, type: 'spring', stiffness: 100 }}
-              className="relative w-72 h-72 sm:w-85 sm:h-85 lg:w-96 lg:h-96"
+              transition={{ duration: 0.8, type: 'spring', stiffness: 80 }}
+              className="relative w-80 h-96 sm:w-96 sm:h-[450px] lg:w-full lg:h-[480px] progressive-border rounded-3xl overflow-hidden p-1 backdrop-blur-md"
             >
-              {/* Spinning Ambient Background Glows */}
-              <motion.div
-                className="absolute inset-[-15px] rounded-full bg-gradient-to-tr from-flutter via-transparent to-flutter-cyan opacity-40 blur-xl pointer-events-none"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-              />
-              
-              <motion.div
-                className="absolute inset-[-5px] rounded-full bg-gradient-to-br from-flutter-cyan via-transparent to-flutter opacity-30 blur-md pointer-events-none"
-                animate={{ rotate: -360 }}
-                transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-              />
+              {/* Spinning Accent Outer Ring */}
+              <div className="absolute inset-[-12px] rounded-3xl border border-dashed border-flutter/10 animate-spin-slow pointer-events-none" />
 
-              {/* Offset Decorative Outer Ring */}
-              <div className="absolute inset-[-10px] rounded-full border border-dashed border-flutter/20 animate-spin-slow pointer-events-none" />
-
-              {/* Main Photo Frame */}
-              <div className="w-full h-full rounded-full overflow-hidden border-2 border-slate-800/80 p-3 bg-slate-950/70 shadow-2xl relative group">
-                <div className="w-full h-full rounded-full overflow-hidden relative border border-slate-700/30">
+              {/* Bento Photo Container */}
+              <div className="w-full h-full rounded-2xl overflow-hidden relative bg-[#07080c] border border-slate-900/60 p-2">
+                <div className="w-full h-full rounded-xl overflow-hidden relative bg-slate-950/80">
                   <ShimmerImage
                     src="/images/avatar.png"
                     alt="Ahmed Hussien Abd El-Razik"
                     fill
                     priority
-                    sizes="(max-width: 768px) 300px, 400px"
-                    className="object-cover object-top hover:scale-105 transition-transform duration-700"
-                    containerClassName="w-full h-full rounded-full border-none!"
+                    sizes="(max-width: 768px) 300px, 450px"
+                    className="object-cover object-top hover:scale-103 transition-transform duration-700"
+                    containerClassName="w-full h-full rounded-xl border-none! cls-skeleton-avatar"
                   />
-                  {/* Glass Accent Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent opacity-60 pointer-events-none" />
+                  {/* Subtle Tech Grid overlay on the image */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,86,155,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(2,86,155,0.05)_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 pointer-events-none" />
                 </div>
               </div>
 
               {/* Floating Flutter Badge */}
               <motion.div
-                className="absolute -bottom-2 -right-2 bg-slate-900/90 border border-slate-700/80 rounded-2xl p-3 shadow-xl flex items-center gap-2 backdrop-blur-md"
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute bottom-4 -right-4 bg-slate-950/90 border border-slate-800/80 rounded-2xl p-3 shadow-2xl flex items-center gap-2 backdrop-blur-md z-10"
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <div className="w-7 h-7 flex items-center justify-center bg-[#02569B]/10 rounded-lg">
-                  {/* Flutter Icon Representation */}
+                <div className="w-8 h-8 flex items-center justify-center bg-[#02569B]/10 rounded-lg">
                   <svg className="w-5 h-5 fill-[#02569B]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.314 0L2.3 12 6 15.7 21.686 0H14.31zM21.686 12l-6 6 6 6h7.314l-6-6 6-6h-7.314zM12.086 12l-3.7-3.7-3.7 3.7 3.7 3.7 3.7-3.7z" />
                   </svg>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold font-sans">Specialty</span>
+                  <span className="text-[9px] text-slate-500 uppercase tracking-widest font-extrabold font-sans">Specialty</span>
                   <span className="text-xs text-slate-200 font-bold font-sans">Flutter SDK</span>
                 </div>
               </motion.div>

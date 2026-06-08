@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Layers, Cpu, Database, Brain, Rocket, Award } from 'lucide-react';
 
@@ -53,7 +54,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -73,8 +74,11 @@ const cardVariants = {
 };
 
 export default function Skills() {
+  // Local state to track which category card is currently hovered
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-slate-950/60">
+    <section id="skills" className="py-24 relative overflow-hidden bg-[#050508]">
       {/* Background ambient lights */}
       <div className="absolute top-1/2 left-1/10 w-[300px] h-[300px] rounded-full bg-flutter-cyan/5 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/10 w-[350px] h-[350px] rounded-full bg-flutter/5 blur-[120px] pointer-events-none" />
@@ -90,14 +94,14 @@ export default function Skills() {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-4xl font-extrabold tracking-tight"
           >
-            Technical <span className="text-gradient-flutter">Skills</span>
+            Technical <span className="text-gradient-flutter font-black">SKILLS</span>
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-1 w-20 bg-flutter mx-auto mt-4 rounded-full"
+            className="h-0.5 w-20 bg-flutter mx-auto mt-4 rounded-full"
           />
           <motion.p
             initial={{ opacity: 0 }}
@@ -120,15 +124,29 @@ export default function Skills() {
         >
           {skillCategories.map((cat, idx) => {
             const Icon = cat.icon;
+            const isHovered = hoveredIdx === idx;
+            const isAnyHovered = hoveredIdx !== null;
+            
             return (
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                className="glass-card rounded-2xl border border-slate-900 p-6 flex flex-col hover:border-flutter/20 transition-all duration-300 group"
+                onMouseEnter={() => setHoveredIdx(idx)}
+                onMouseLeave={() => setHoveredIdx(null)}
+                animate={{
+                  opacity: !isAnyHovered || isHovered ? 1 : 0.4,
+                  scale: isHovered ? 1.02 : 1,
+                  borderColor: isHovered ? 'rgba(2, 86, 155, 0.35)' : 'rgba(255, 255, 255, 0.03)',
+                }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="glass-card rounded-3xl border p-6 flex flex-col transition-shadow duration-300 group cursor-default"
+                style={{
+                  boxShadow: isHovered ? '0 15px 30px -15px rgba(2, 86, 155, 0.15)' : 'none',
+                }}
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-3.5 mb-5 border-b border-slate-900/60 pb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-950 flex items-center justify-center border border-slate-800/80 group-hover:border-flutter/30 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-slate-950/80 flex items-center justify-center border border-slate-900 group-hover:border-flutter/30 transition-colors">
                     <Icon className={`w-5 h-5 ${cat.iconColor}`} />
                   </div>
                   <h3 className="font-bold text-base sm:text-lg text-white">

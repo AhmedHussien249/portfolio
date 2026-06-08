@@ -145,7 +145,7 @@ export default function Hero() {
                 {/* Image frame */}
                 <div className="w-full h-full rounded-full overflow-hidden relative bg-[#07080c] border border-slate-950">
                   <ShimmerImage
-                    src="/images/avatar.png"
+                    src="/portfolio/images/avatar.png"
                     alt="Ahmed Hussien Abd El-Razik"
                     fill
                     priority

@@ -179,12 +179,12 @@ export default function Projects() {
                         <span>Repository</span>
                       </a>
                       <a
-                        href={proj.preview}
+                        href={proj.video}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-xs font-bold text-flutter-cyan hover:text-white transition-colors"
                       >
-                        <span>Preview</span>
+                        <span>Watch Demo</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>

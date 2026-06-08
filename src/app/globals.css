@@ -40,6 +40,10 @@
 
 /* Base custom styles */
 @layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
   body {
     background-color: var(--color-dark-bg);
     color: #f1f5f9;

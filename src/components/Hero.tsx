@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail, Briefcase } from 'lucide-react';
-import ShimmerImage from './ShimmerImage';
 
 export default function Hero() {
   return (
@@ -144,14 +143,10 @@ export default function Hero() {
                 
                 {/* Image frame */}
                 <div className="w-full h-full rounded-full overflow-hidden relative bg-[#07080c] border border-slate-950">
-                  <ShimmerImage
-                    src="/images/avatar.png"
+                  <img
+                    src="/portfolio/images/avatar.png"
                     alt="Ahmed Hussien Abd El-Razik"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 250px, 320px"
-                    className="object-cover object-top rounded-full"
-                    containerClassName="w-full h-full rounded-full border-none! cls-skeleton-avatar"
+                    className="object-cover object-top rounded-full w-full h-full"
                   />
                   
                   {/* Subtle Tech Grid overlay on the image */}

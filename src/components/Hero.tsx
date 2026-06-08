@@ -42,7 +42,7 @@ export default function Hero() {
               <span className="text-gradient-flutter font-black">Ahmed Hussien</span>
               <br />
               <span className="text-2xl sm:text-3xl xl:text-4xl text-slate-300 font-semibold block mt-4">
-                Senior Flutter Developer & Mobile Engineer
+                Junior Flutter Developer & Mobile Engineer
               </span>
             </motion.h1>
 

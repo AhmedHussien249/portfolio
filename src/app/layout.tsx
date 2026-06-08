@@ -15,12 +15,12 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmed Hussien | Senior Flutter Developer | Mobile App Engineer",
-  description: "Self-driven Senior Flutter Developer with 2+ years of experience building production-ready, cross-platform mobile applications using Clean Architecture, BLoC, and Gemini AI.",
+  title: "Ahmed Hussien | Junior Flutter Developer | Mobile App Engineer",
+  description: "Self-driven Junior Flutter Developer with 2+ years of experience building production-ready, cross-platform mobile applications using Clean Architecture, BLoC, and Gemini AI.",
   keywords: [
     "Ahmed Hussien Abd El-Razik",
     "Flutter Developer",
-    "Senior Flutter Developer",
+    "Junior Flutter Developer",
     "Dart Developer",
     "Mobile App Developer",
     "Next.js Portfolio",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ahmed Hussien Abd El-Razik" }],
   openGraph: {
-    title: "Ahmed Hussien | Senior Flutter Developer | Mobile App Engineer",
-    description: "Portfolio of Ahmed Hussien, Senior Flutter Developer building high-performance mobile apps.",
+    title: "Ahmed Hussien | Junior Flutter Developer | Mobile App Engineer",
+    description: "Portfolio of Ahmed Hussien, Junior Flutter Developer building high-performance mobile apps.",
     url: "https://ahmed-hussien.dev",
     siteName: "Ahmed Hussien Portfolio",
     type: "website",

@@ -6,7 +6,7 @@ import { Calendar, MapPin, Briefcase, GitPullRequest, Layers, Users, Rocket } fr
 
 const experiences = [
   {
-    role: 'Flutter Developer Intern',
+    role: 'Junior Flutter Developer',
     company: 'Elevate Tech',
     period: 'Oct 2025 - May 2026',
     location: 'Remote',

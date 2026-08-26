@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${outfit.variable} dark scroll-smooth`}
     >
-      <body className="bg-[#050508] text-slate-100 font-sans antialiased min-h-screen selection:bg-[#02569B] selection:text-white">
+      <body className="bg-[#0a0f1a] text-slate-100 font-sans antialiased min-h-screen selection:bg-[#02569B] selection:text-white">
         {children}
       </body>
     </html>
